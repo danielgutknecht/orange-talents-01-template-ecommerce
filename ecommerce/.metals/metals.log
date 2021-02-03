@@ -1,0 +1,11 @@
+[0m2021.02.02 21:58:07 INFO  Started: Metals version 0.9.10 in workspace '/home/daniel/eclipse-workspace/orange-talents-01-template-ecommerce/ecommerce' for client coc.nvim 0.0.80.[0m
+[0m2021.02.02 21:58:08 INFO  time: initialize in 1.24s[0m
+[0m2021.02.02 21:58:08 WARN  Build server is not auto-connectable.[0m
+[0m2021.02.03 09:46:28 INFO  Started: Metals version 0.9.10 in workspace '/home/daniel/eclipse-workspace/orange-talents-01-template-ecommerce/ecommerce' for client coc.nvim 0.0.80.[0m
+[0m2021.02.03 09:46:30 INFO  time: initialize in 2.3s[0m
+[0m2021.02.03 09:46:31 WARN  Build server is not auto-connectable.[0m
+[0m2021.02.03 09:46:31 INFO  skipping build import with status 'Requested'[0m
+[0m2021.02.03 09:48:55 INFO  Started: Metals version 0.9.10 in workspace '/home/daniel/eclipse-workspace/orange-talents-01-template-ecommerce/ecommerce' for client coc.nvim 0.0.80.[0m
+[0m2021.02.03 09:48:56 INFO  time: initialize in 1.54s[0m
+[0m2021.02.03 09:48:57 WARN  Build server is not auto-connectable.[0m
+[0m2021.02.03 09:48:57 INFO  skipping build import with status 'Requested'[0m
