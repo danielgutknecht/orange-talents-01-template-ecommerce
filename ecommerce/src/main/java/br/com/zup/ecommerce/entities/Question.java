@@ -19,7 +19,7 @@ public class Question {
 	@Column(nullable = false)
 	private LocalDateTime createdAt = LocalDateTime.now();
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne()
 	private Product product;
 
 	public String getTitle() {

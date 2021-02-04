@@ -13,28 +13,28 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Role {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(nullable = false)
-	private String nome;
-	
-	@ManyToMany
-	@JoinTable(name = "permission_group", joinColumns = @JoinColumn(name = "group_id"),
-			inverseJoinColumns = @JoinColumn(name = "permission_id"))
-	private Set<Permission> permissions = new HashSet<>();
 
-	public Long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public String getNome() {
-		return nome;
-	}
+    @Column(nullable = false)
+    private String nome;
 
-	public Set<Permission> getPermissions() {
-		return permissions;
-	}
+    @ManyToMany
+    @JoinTable(name = "role_permission", joinColumns = @JoinColumn(name = "group_id"),
+            inverseJoinColumns = @JoinColumn(name = "permission_id"))
+    private Set<Permission> permissions = new HashSet<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Set<Permission> getPermissions() {
+        return permissions;
+    }
 }

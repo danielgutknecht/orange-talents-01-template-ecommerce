@@ -15,7 +15,7 @@ public class Feature {
     @Column(nullable = false)
     private String description;
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne()
     private Product product;
 
     public Long getId() {

@@ -18,10 +18,10 @@ public class Review {
     @Column(nullable = false)
     private String description;
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne()
     private Product product;
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne()
     private User user;
 
     public Long getId() {

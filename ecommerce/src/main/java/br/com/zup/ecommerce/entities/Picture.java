@@ -13,7 +13,7 @@ public class Picture {
     @Column(nullable = false)
     private String link;
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne()
     private Product product;
 
     public Picture(Product product, String link) {

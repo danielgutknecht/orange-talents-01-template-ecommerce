@@ -31,17 +31,17 @@ public class Product {
     @OneToOne
     private Category category;
     
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product")
     private Set<Picture> pictures = new HashSet<>();
     
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product")
     private Set<Feature> features = new HashSet<>();
     
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Set<Question> question = new HashSet<>();
+	@OneToMany(mappedBy = "product")
+    private Set<Question> question = new HashSet<>();
     
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Set<Review> review = new HashSet<>();
+	@OneToMany(mappedBy = "product")
+    private Set<Review> review = new HashSet<>();
     
     @OneToOne
     private User user;
