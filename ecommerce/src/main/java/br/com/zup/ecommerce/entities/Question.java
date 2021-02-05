@@ -21,6 +21,17 @@ public class Question {
 
 	@ManyToOne()
 	private Product product;
+	
+	@OneToOne
+	private User user;
+	
+	
+	public Question(String title, String description, LocalDateTime createdAt) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.createdAt = createdAt;
+	}
 
 	public String getTitle() {
 		return title;

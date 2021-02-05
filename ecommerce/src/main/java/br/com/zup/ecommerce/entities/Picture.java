@@ -2,7 +2,6 @@ package br.com.zup.ecommerce.entities;
 
 import javax.persistence.*;
 
-
 @Entity
 public class Picture {
 

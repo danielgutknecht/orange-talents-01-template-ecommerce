@@ -15,10 +15,16 @@ public class Feature {
     @Column(nullable = false)
     private String description;
     
-    @ManyToOne()
-    private Product product;
+    @ManyToOne
+    private Product product;    
+    
+    public Feature(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
 
-    public Long getId() {
+	public Long getId() {
         return id;
     }
 

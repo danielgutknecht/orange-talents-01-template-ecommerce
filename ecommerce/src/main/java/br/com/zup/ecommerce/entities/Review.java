@@ -5,46 +5,53 @@ import javax.persistence.*;
 @Entity
 public class Review {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @Column(nullable = false)
-    private Integer rating;
-    
-    @Column(nullable = false)
-    private String title;
-    
-    @Column(nullable = false)
-    private String description;
-    
-    @ManyToOne()
-    private Product product;
-    
-    @ManyToOne()
-    private User user;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    public Long getId() {
-        return id;
-    }
+	@Column(nullable = false)
+	private Integer rating;
 
-    public Integer getRating() {
-        return rating;
-    }
+	@Column(nullable = false)
+	private String title;
 
-    public String getTitle() {
-        return title;
-    }
+	@Column(nullable = false)
+	private String description;
 
-    public String getDescription() {
-        return description;
-    }
+	@ManyToOne()
+	private Product product;
 
-    public Product getProduct() {
-        return product;
-    }
+	@ManyToOne()
+	private User user;
 
-    public User getUser() {
-        return user;
-    }
+	public Review(Integer rating, String title, String description) {
+		super();
+		this.rating = rating;
+		this.title = title;
+		this.description = description;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public Integer getRating() {
+		return rating;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public User getUser() {
+		return user;
+	}
 }

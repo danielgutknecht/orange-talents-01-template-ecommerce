@@ -17,9 +17,8 @@ public class Category {
 
     public Category(String name, Category motherCategory) {
         this.name = name;
-        this.motherCategory = motherCategory;
     }
-
+        
     public Long getId() {
         return id;
     }
