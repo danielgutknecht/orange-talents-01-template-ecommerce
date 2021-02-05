@@ -15,7 +15,7 @@ public class Category {
     @OneToOne
     private Category motherCategory;
 
-    public Category(String name, Category motherCategory) {
+    public Category(String name) {
         this.name = name;
     }
         

@@ -19,7 +19,6 @@ public class Feature {
     private Product product;    
     
     public Feature(String name, String description) {
-		super();
 		this.name = name;
 		this.description = description;
 	}

@@ -26,8 +26,8 @@ public class Purchase {
     @OneToOne
     private User user;
     
-    @OneToMany
-    private Set<Payment> payments = new HashSet<Payment>();    
+    @OneToMany(mappedBy = "purchase")
+    private Set<Payment> payments = new HashSet<>();
     
 
 

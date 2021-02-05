@@ -37,7 +37,7 @@ public class Product {
 	private Set<Picture> pictures = new HashSet<>();
 
 	@OneToMany(mappedBy = "product")
-	private Set<Feature> features = new HashSet<Feature>();
+	private Set<Feature> features = new HashSet<>();
 
 	@OneToMany(mappedBy = "product")
 	private Set<Question> question = new HashSet<>();
@@ -60,16 +60,16 @@ public class Product {
 		this.description = description;
 	}
 
-	public Double averageReview(Review review) {
+	public Double averageReview() {
 		return getReview().stream().mapToLong(Review::getRating).average().orElseThrow();
 	}
 	
-	public Integer totalReview(Review review) {
+	public Integer totalReview() {
 		return getReview().stream().mapToInt(Review::getRating).sum();
 	}
 	
-	public Integer sumAlmountProduct(Integer almount) {
-		List<Product> qtd = new ArrayList<Product>();
+	public Integer sumAlmountProduct() {
+		List<Product> qtd = new ArrayList<>();
 		
 		return qtd.stream().mapToInt(Product::getAmount).sum();	
 	}
