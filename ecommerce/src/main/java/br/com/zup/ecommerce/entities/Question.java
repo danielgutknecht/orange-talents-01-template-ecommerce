@@ -21,16 +21,19 @@ public class Question {
 
 	@ManyToOne()
 	private Product product;
-	
+
 	@OneToOne
 	private User user;
-	
-	
-	public Question(String title, String description, LocalDateTime createdAt) {
-		super();
+
+	public Question(String title, String description, Product product, User user) {
 		this.title = title;
 		this.description = description;
-		this.createdAt = createdAt;
+		this.product = product;
+		this.user = user;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getTitle() {
@@ -47,6 +50,10 @@ public class Question {
 
 	public Product getProduct() {
 		return product;
+	}
+
+	public User getUser() {
+		return user;
 	}
 
 }

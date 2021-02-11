@@ -5,37 +5,45 @@ import javax.persistence.*;
 @Entity
 public class Feature {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @Column(nullable = false)
-    private String name;
-    
-    @Column(nullable = false)
-    private String description;
-    
-    @ManyToOne
-    private Product product;    
-    
-    public Feature(String name, String description) {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(nullable = false)
+	private String name;
+
+	@Column(nullable = false)
+	private String value;
+
+	@ManyToOne
+	private Product product;
+
+	public Feature(String name, String value, Product product) {
 		this.name = name;
-		this.description = description;
+		this.value = value;
+		this.product = product;
+	}
+
+	public Feature(String name, String value) {
+		super();
+		this.name = name;
+		this.value = value;
 	}
 
 	public Long getId() {
-        return id;
-    }
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public String getValue() {
+		return value;
+	}
 
-    public Product getProduct() {
-        return product;
-    }
+	public Product getProduct() {
+		return product;
+	}
+
 }

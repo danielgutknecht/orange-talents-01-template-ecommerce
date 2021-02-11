@@ -24,11 +24,13 @@ public class Review {
 	@ManyToOne()
 	private User user;
 
-	public Review(Integer rating, String title, String description) {
-		super();
+	public Review(Integer rating, String title, String description, Product product, User user) {
+
 		this.rating = rating;
 		this.title = title;
 		this.description = description;
+		this.product = product;
+		this.user = user;
 	}
 
 	public Long getId() {

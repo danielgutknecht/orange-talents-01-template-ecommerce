@@ -20,9 +20,9 @@ public class Product {
 
 	@Column(nullable = false)
 	private BigDecimal price;
-	
+
 	@Column(nullable = false)
-    private Integer amount;
+	private Integer amount;
 
 	@Column(nullable = false)
 	private String description;
@@ -37,43 +37,49 @@ public class Product {
 	private Set<Picture> pictures = new HashSet<>();
 
 	@OneToMany(mappedBy = "product")
-	private Set<Feature> features = new HashSet<>();
+	private List<Feature> features;
 
 	@OneToMany(mappedBy = "product")
 	private Set<Question> question = new HashSet<>();
 
 	@OneToMany(mappedBy = "product")
 	private Set<Review> review = new HashSet<>();
-	
+
 	@OneToMany(mappedBy = "product")
 	private Set<Purchase> purchase;
-	
+
 	@OneToOne
 	private User user;
 	
-			
-	public Product(String name, BigDecimal price, Integer amount, String description) {
-		super();
+	public Product() {
+		
+	}
+
+	public Product(String name, BigDecimal price, Integer amount, String description, Category category,
+			List<Feature> features, User user) {
 		this.name = name;
 		this.price = price;
 		this.amount = amount;
 		this.description = description;
+		this.category = category;
+		this.features = features;
+		this.user = user;
 	}
 
 	public Double averageReview() {
 		return getReview().stream().mapToLong(Review::getRating).average().orElseThrow();
 	}
-	
+
 	public Integer totalReview() {
 		return getReview().stream().mapToInt(Review::getRating).sum();
 	}
-	
+
 	public Integer sumAlmountProduct() {
 		List<Product> qtd = new ArrayList<>();
-		
-		return qtd.stream().mapToInt(Product::getAmount).sum();	
+
+		return qtd.stream().mapToInt(Product::getAmount).sum();
 	}
-	
+
 	public boolean addPicture(Picture picture) {
 		return getPictures().add(picture);
 	}
@@ -110,7 +116,7 @@ public class Product {
 		return pictures;
 	}
 
-	public Set<Feature> getFeatures() {
+	public List<Feature> getFeatures() {
 		return features;
 	}
 
@@ -129,6 +135,5 @@ public class Product {
 	public User getUser() {
 		return user;
 	}
-	
-	
+
 }
